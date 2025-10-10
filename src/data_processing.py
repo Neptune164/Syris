@@ -10,6 +10,5 @@ def preprocessing(dirFile, tarPath, fileName):
     drop_features = [x for x in features if x not in keep_features]
     raw_data = raw_data.drop(columns=drop_features)
     
-    # print(raw_data.isna().sum())
     raw_data = raw_data.dropna()
     raw_data.to_csv(os.path.join(tarPath, f"{fileName}_weather_cleaned.csv"), index=False)
