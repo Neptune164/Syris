@@ -18,8 +18,6 @@ end_date = "2025-09-30"
 lag_feature = "./data/lag_features/2025-09-24_2025-09-30_weather_lagged.csv"
 filename = "09-24_10-10"
 
-result_path = "./flask/result.json"
-
 RF = joblib.load(os.path.join(rf_model))
 GB = joblib.load(os.path.join(xgb_model))
 
@@ -40,4 +38,4 @@ result = pd.DataFrame({
     "datetime": date,
     "temperature": preds
 })
-result.to_json(os.path.join(result_path))
+print(result)
